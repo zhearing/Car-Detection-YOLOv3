@@ -106,7 +106,7 @@ venv.bak/
 # pycharm
 .idea/
 
-*~
+keras-yolo3/*.py~
 
 # weights
 keras-yolo3/yolov3.weights
