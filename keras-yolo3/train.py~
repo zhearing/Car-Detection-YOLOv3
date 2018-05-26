@@ -17,7 +17,7 @@ YOLO_ANCHORS = np.array(((10,13), (16,30), (33,23), (30,61),
     (62,45), (59,119), (116,90), (156,198), (373,326)))
 
 def _main():
-    annotation_path = '/media/zyzhong/Data/data3/HualuCUP/annotation_1.txt'
+    annotation_path = '/media/zyzhong/Data/data3/HualuCUP/annotation.txt'
     data_path = '/media/zyzhong/Data/data3/HualuCUP/train_1.npz'
     train_path = '/media/zyzhong/Data/data3/HualuCUP/ehualu/train/'
     output_path = 'model_data/my_yolo.h5'
@@ -29,7 +29,7 @@ def _main():
     
     input_shape = (416,416) # multiple of 32
     image_data, box_data = get_training_data(annotation_path, data_path, train_path,
-        input_shape, max_boxes=100, load_previous=True)
+        input_shape, max_boxes=100, load_previous=False)
     y_true = preprocess_true_boxes(box_data, input_shape, anchors, len(class_names))
  
     infer_model, model = create_model(input_shape, anchors, len(class_names),
