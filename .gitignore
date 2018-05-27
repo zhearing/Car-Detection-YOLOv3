@@ -106,8 +106,9 @@ venv.bak/
 # pycharm
 .idea/
 
-keras-yolo3/*.py~
+# backup 
+*.*~
 
 # weights
-keras-yolo3/yolov3.weights
-keras-yolo3/model_data/yolo.h5
+*.weights
+*.h5
